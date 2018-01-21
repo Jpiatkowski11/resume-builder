@@ -77,12 +77,15 @@ var bio = {
 	"bioPic" : "" 
 };
 
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
 var education = {
 	"schools": [{
 			"name": "University of the Incarnate Word",
 			"dates": 4,
 			"degree": "Communication Arts",
-			"majors" : ["Comminucation Arts"]
+			"majors" : ["Comminucation Arts"],
 			"graduationYear": 2013,
 			"url" : "",
 			"location": "San Antonio"
@@ -105,34 +108,32 @@ var education = {
 	]
 };
 
-var formattedName = HTMLheaderName.replace("%data%", "bio.name");
-var formattedRole = HTMLheaderRole.replace("%data%", "bio.role");
+
 
 if (bio.skills.length > 0) {
 
-	$("#header").append(HTMLskillsStart);
-
-	var formattedSkill =  HTMLskills.replace("%data%", bio.skills[0]);
+$("#header").append(HTMLskillsStart);
+ var formattedSkill =  HTMLskills.replace("%data%", bio.skills[0]);
 	$("#header").append(formattedSkill);
 	formattedSkill =  HTMLskills.replace("%data%", bio.skills[1]);
 	$("#header").append(formattedSkill);
 	formattedSkill =  HTMLskills.replace("%data%", bio.skills[2]);
 	$("#header").append(formattedSkill);
-	formattedSkill =  HTMLskills.replace("%data%", bio.skills[3]);
+ 	formattedSkill =  HTMLskills.replace("%data%", bio.skills[3]);
 	$("#header").append(formattedSkill);
-	formattedSkill =  HTMLskills.replace("%data%", bio.skills[4]);
-	$("#header").append(formattedSkill);
+ 	formattedSkill =  HTMLskills.replace("%data%", bio.skills[4]);
+ 	$("#header").append(formattedSkill);
+	
 
 };
 
-for(jobs in work) {
-	$("#main").append(work[jobs]);
+// for(jobs in work) {
+// 	$("#main").append(work[jobs]);
 
-	}
-}
+// 	}
 
 
-$("#header").append(formattedName);
-$("#header").append(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
 $("#header").append(formattedSkill);
 
